@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Candidate Submission Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="number" class="form-control" id="phone" name="phone" required>
+        </div>
+        <div class="mb-3">
+            <label for="portfolio" class="form-label">Portfolio URL</label>
+            <input type="url" class="form-control" id="portfolio" name="portfolio">
+        </div>
+        <div class="mb-3">
+            <label for="website" class="form-label">Personal Website</label>
+            <input type="url" class="form-control" id="website" name="website">
+        </div>
+        <div class="mb-3">
+            <label for="coverLetter" class="form-label">Cover Letter</label>
+            <textarea class="form-control" id="coverLetter" name="coverLetter" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock content %}
